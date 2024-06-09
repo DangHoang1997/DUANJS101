@@ -72,7 +72,7 @@ function findMax(arr){
 
 function findMax(arr) {
 
-    let max = arr[0]
+    let max = arr[0];
     for (let i = 1; i < arr.length ; i++){
         if ( arr[i] > max) {
             max = arr[i];
@@ -90,3 +90,9 @@ function sum (a,b){
     return a+b
 }
 console.log(sum(1,3))
+// làm lại bài toán tính tổng hai số trong chuỗi
+
+function sum (a,b) {
+    return a +b;
+}
+console.log(sum(1,3));
