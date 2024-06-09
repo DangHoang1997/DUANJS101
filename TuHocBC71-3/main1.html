@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinh tong 2 so nguyen</title>
+</head>
+<body>
+    <input id="truong1" type="text">
+    <input id="truong2" type="text">
+    <button onclick="hienthiketqua()">Kết quả</button>
+    <span id="ketqua"></span>
+<script>
+    function hienthiketqua(){
+        var input1 = document.getElementById('truong1').value;
+        var input2 = document.getElementById('truong2').value;
+
+        // Chuyển đổi giá trị nhập vào từ chuỗi sang số
+        var q = parseInt(input1);
+        var k = parseInt(input2);
+
+        // Tính tổng của hai số
+        var output = q + k;
+
+        // Hiển thị kết quả
+        var ketquaSpan = document.getElementById('ketqua');
+        ketquaSpan.innerHTML = "Kết quả: " + output;
+    }
+</script>
+</body>
+</html>
