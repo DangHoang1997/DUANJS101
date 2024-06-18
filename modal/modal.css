@@ -1,0 +1,10 @@
+/* Modal styles */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-group {
+    width: 100%;
+  }
