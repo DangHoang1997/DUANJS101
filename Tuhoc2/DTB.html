@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <input type="text" id="Toan" placeholder="Toán">
+    <input type="text" id="Ly"  placeholder="Lý">
+    <input type="text" id="Hoa"  placeholder="Hóa">
+    <button id="ketqua">Kết quả</button>  
+
+
+
+
+
+
+    <script>
+        document.getElementById('ketqua').onclick = function() {
+            var Toan = document.getElementById('Toan').value * 1;
+            var Ly = document.getElementById('Ly').value * 1;
+            var Hoa = document.getElementById('Hoa').value * 1;
+            var TB = (Toan + Ly + Hoa) / 3;
+
+            if (TB >= 9) {
+                alert('Xuất sắc');
+                console.log("Xuất sắc");
+            } else if (TB >= 8.5 && TB < 9) {
+                alert('Giỏi');
+                console.log("Giỏi");
+            } else if (TB >= 7.5 && TB < 8.5) {
+                // Điều kiện này không đúng, cần thêm toán tử and
+                alert('Khá');
+                console.log("Khá");
+            } else if (TB >= 5 && TB < 7.5) {
+                alert('Trung bình');
+                console.log("Trung bình");
+            } else if (TB < 5 && TB >= 0) {
+                alert('Yếu');
+                console.log("Yếu");
+            } else {
+                alert('Yếu Đuối');
+                console.log("Yếu Đuối");
+            }
+        }
+
+
+
+
+    </script>
+    
+
+
+
+</body>
+</html>

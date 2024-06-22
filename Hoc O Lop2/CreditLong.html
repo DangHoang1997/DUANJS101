@@ -1,70 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Title</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-        <!-- Bootstrap CSS v5.2.1 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
-    </head>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
 
-    <body>
-        <header>
-            <input id="Tien_Muon" type="Number" placeholder="Tiền Đã Mượn">
-            <input id="Tien_Tra" type="number" placeholder="Tiền Đã Trả">
-            <button id="Tinh_tien">Tinh</button>
-            <h1 id="ket_qua"><span>kết quả </span></h1>
-        </header>
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"
-        ></script>
+  <body>
+    <header>
+      <input id="Tien_Muon" type="Number" placeholder="Tiền Đã Mượn" />
+      <input id="Tien_Tra" type="number" placeholder="Tiền Đã Trả" />
+      <button id="Tinh_tien">Tinh</button>
+      <h1 id="ket_qua"><span>kết quả </span></h1>
+    </header>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"
-        ></script>
-        <script>
-            // Khi người dùng nhấp vào nút "Tính", hàm này sẽ được gọi.
-            // Hàm này sẽ lấy giá trị của 2 input và tính số tiền phạt dựa trên điều kiện đã được xác định.
-            // Nếu số tiền phạt lớn hơn hoặc bằng 0, sẽ hiển thị thông báo bằng cách sử dụng hàm alert và update lại phần tử có id "ket_qua" với thông tin số tiền phạt.
-            // Nếu số tiền phạt nhỏ hơn 0, sẽ hiển thị thông báo bằng cách sử dụng hàm alert và update lại phần tử có id "ket_qua" với thông tin "Không Có nợ tiền".
-            document.getElementById("Tinh_tien").onclick = function () {
-                var Tien_Muon = Number(document.getElementById("Tien_Muon").value);
-                var Tien_Tra = Number(document.getElementById("Tien_Tra").value);
-                var Tien_Phat = (Tien_Muon - Tien_Tra) * 0.015;
-                if (Tien_Phat >=0) {
-                    alert(`Số tiền phạt là ${Tien_Phat} VND`);
-                    document.getElementById("ket_qua").innerHTML = `Số tiền phạt là ${Tien_Phat} VND`;
-                } else {
-                    alert(`Bạn Không Có nợ tiền`);
-                    document.getElementById("ket_qua").innerHTML = `…… Không Có nợ tiền `;
-                }
-
-
-}
-
-            
-            
-            
-
-
-
-
-
-
-        </script>
-    </body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Khi người dùng nhấp vào nút "Tính", hàm này sẽ được gọi.
+      // Hàm này sẽ lấy giá trị của 2 input và tính số tiền phạt dựa trên điều kiện đã được xác định.
+      // Nếu số tiền phạt lớn hơn hoặc bằng 0, sẽ hiển thị thông báo bằng cách sử dụng hàm alert và update lại phần tử có id "ket_qua" với thông tin số tiền phạt.
+      // Nếu số tiền phạt nhỏ hơn 0, sẽ hiển thị thông báo bằng cách sử dụng hàm alert và update lại phần tử có id "ket_qua" với thông tin "Không Có nợ tiền".
+      document.getElementById("Tinh_tien").onclick = function () {
+        var Tien_Muon = Number(document.getElementById("Tien_Muon").value);
+        var Tien_Tra = Number(document.getElementById("Tien_Tra").value);
+        var Tien_Phat = (Tien_Muon - Tien_Tra) * 0.015;
+        if (Tien_Phat >= 0) {
+          alert(`Số tiền phạt là ${Tien_Phat} VND`);
+          document.getElementById(
+            "ket_qua"
+          ).innerHTML = `Số tiền phạt là ${Tien_Phat} VND`;
+        } else {
+          alert(`Bạn Không Có nợ tiền`);
+          document.getElementById("ket_qua").innerHTML = `…… Không Có nợ tiền `;
+        }
+      };
+    </script>
+  </body>
 </html>
