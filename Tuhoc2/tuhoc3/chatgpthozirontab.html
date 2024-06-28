@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Tabs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #parentHorizontalTab {
+            width: 100%;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid #c1c1c1;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .resp-tabs-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            border-bottom: 1px solid #c1c1c1;
+        }
+
+        .resp-tab-item {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            background: #f5f5f5;
+            border: 1px solid #c1c1c1;
+            border-bottom: none;
+            transition: background 0.3s ease;
+        }
+
+        .resp-tab-item:hover,
+        .resp-tab-item.resp-tab-active {
+            background: #fff;
+        }
+
+        .resp-tab-content {
+            display: none;
+            padding: 20px;
+            border-top: 1px solid #c1c1c1;
+        }
+
+        .resp-tab-content-active {
+            display: block;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .theme-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #007bff;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .theme-button:hover {
+            background: #007bff;
+            color: #fff;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-md-6 {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .mt-md-0 {
+            margin-top: 0;
+        }
+
+        .mt-3 {
+            margin-top: 1rem;
+        }
+
+        .mt-5 {
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .resp-tabs-list {
+                flex-direction: column;
+            }
+
+            .resp-tab-item {
+                border-bottom: 1px solid #c1c1c1;
+            }
+
+            .col-md-6 {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="parentHorizontalTab">
+    <ul class="resp-tabs-list hor_1">
+        <li class="resp-tab-item hor_1 resp-tab-active" aria-controls="hor_1_tab_item-0" role="tab">
+            Project One
+        </li>
+        <li class="resp-tab-item hor_1" aria-controls="hor_1_tab_item-1" role="tab">
+            Project Two
+        </li>
+        <li class="resp-tab-item hor_1" aria-controls="hor_1_tab_item-2" role="tab">
+            Project Three
+        </li>
+    </ul>
+    <div class="resp-tabs-container hor_1">
+        <div class="products-content resp-tab-content hor_1 resp-tab-content-active" aria-labelledby="hor_1_tab_item-0">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>
+                        Why a visual identity system is more memorable
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit, adipisicing elit repudiandae perferendis dolores praesentium nulla quibusdam repellendus. consequatur minus aliquam corrupti blanditiis, necessitatibus consectetur modi ipsum natus accusantium sit pariatur.
+                    </p>
+                    <a href="#url" class="btn btn-outline-primary theme-button mt-3">
+                        Know more</a>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-5">
+                    <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b4.jpg" class="img-fluid img-curve" alt="project image">
+                </div>
+            </div>
+        </div>
+        <div class="products-content resp-tab-content hor_1" aria-labelledby="hor_1_tab_item-1">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b5.jpg" class="img-fluid img-curve" alt="project image">
+                </div>
+                <div class="col-md-6 mt-md-0 mt-5">
+                    <h3>
+                        Make website that looks Lorem, ipsum dolor.
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit, adipisicing elit repudiandae perferendis dolores praesentium nulla quibusdam repellendus. consequatur minus aliquam corrupti blanditiis, necessitatibus consectetur modi ipsum natus accusantium sit pariatur.
+                    </p>
+                    <a href="#url" class="btn btn-outline-primary theme-button mt-3">
+                        Know more</a>
+                </div>
+            </div>
+        </div>
+        <div class="products-content resp-tab-content hor_1" aria-labelledby="hor_1_tab_item-2">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>
+                        Why a visual identity system is more memorable
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit, adipisicing elit repudiandae perferendis dolores praesentium nulla quibusdam repellendus. consequatur minus aliquam corrupti blanditiis, necessitatibus consectetur modi ipsum natus accusantium sit pariatur.
+                    </p>
+                    <a href="#url" class="btn btn-outline-primary theme-button mt-3">
+                        Know more</a>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-5">
+                    <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b6.jpg" class="img-fluid img-curve" alt="project image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabs = document.querySelectorAll('.resp-tab-item');
+        const contents = document.querySelectorAll('.resp-tab-content');
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('resp-tab-active'));
+                contents.forEach(c => c.classList.remove('resp-tab-content-active'));
+                
+                tab.classList.add('resp-tab-active');
+                contents[index].classList.add('resp-tab-content-active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
