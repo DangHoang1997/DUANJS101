@@ -1,0 +1,10 @@
+data kiểu dữ liệu 
+toán tử so sánh phép so sánh 
+funcition : hàm
+array chuỗi 
+object 
+bài tập tổng hợp 3 ngày nên tảng quản lý sinh viên buổi số 17 18 19 
+api - axios 
+es6 
+
+reacj

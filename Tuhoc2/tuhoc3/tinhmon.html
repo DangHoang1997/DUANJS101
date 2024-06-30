@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d-f{
+            display: flex;
+            align-items: center;
+            align-items: center;
+        }
+        .khoia{
+            margin-right: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-f">
+    <div class="khoia">
+    <h1>Khối a</h1>
+    <input type="number" id="toan">
+    <input type="number" id="ly">
+    <input type="number" id="hoa">
+    <input type="number" id="diemtbA">
+   
+    
+    </div>
+    <div class="khoic">
+        <h1>Khối c</h1>
+        <input type="number" id="toanc">
+        <input type="number" id="van">
+        <input type="number" id="anh">
+        <input type="text" id="diemtbC">
+        
+    </div>
+    </div>
+    <button id="tinhdiem">Tinh</button>
+    <span id="ketqua"></span>
+    <script>
+        document.getElementById('tinhdiem').onclick = function(){
+            // tính điểm khói a
+            var toan = document.getElementById('toan').value*1;
+            var ly = document.getElementById('ly').value*1;
+            var hoa = document.getElementById('hoa').value*1;
+            // tính điểm tb khối a
+            var diemtbA = tinhdiemTB(toan,ly,hoa);
+            document.getElementById('diemtbA').value = diemtbA;
+            // tinh diem khói c
+            var toanc = document.getElementById('toanc').value*1;
+            var van = document.getElementById('van').value*1;
+            var anh = document.getElementById('anh').value*1;
+            // tinh diem tb khói c
+            var diemtbC = tinhdiemTB(toanc,van,anh);
+            document.getElementById('diemtbC').value = diemtbC;
+            
+        }
+        function tinhdiemTB(diem1,diem2,diem3){ //input 7 8 9 
+            var TB = 0;
+            TB = (diem1*2 + diem2 + diem3) / 4;
+            
+
+
+            //output diemTB
+            return TB;
+
+
+        }
+           
+    </script>
+    
+</body>
+</html>
