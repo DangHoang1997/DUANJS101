@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="toan" type="text" placeholder="Toán">
+    <input id="ly" type="text" placeholder="Lý">
+    <input id="hoa" type="text"placeholder="Hóa">
+    <button id="ketqua">Kết quả</button>
+    <script>
+
+
+
+
+var TB = 7;
+
+
+
+
+        document.getElementById('ketqua').onclick = function () {
+            var toan = document.getElementById('toan').value*1;
+        var ly = document.getElementById('ly').value*1;
+        var hoa = document.getElementById('hoa').value*1;
+        var TB = (toan + ly + hoa )/3;
+        
+
+
+
+
+        if (TB >= 9){
+    alert('Xuất sắc');
+    console.log("Xuất sắc");
+}
+else if (TB >= 8.5){
+    alert('Giỏi');
+    console.log("Giỏi");
+}
+else if (6.5 <= TB && TB < 8.5){
+    alert('Khá');
+    console.log("Khá");
+}
+else if (5 <= TB && TB < 6.5){
+    alert('Trung bình');
+    console.log("Trung bình");
+}
+else if (3 <= TB && TB < 5){
+    alert('Yếu');
+    console.log("Yếu");
+}
+else if (0 <= TB && TB < 3){
+    alert('Yếu Đuối');
+    console.log("Yếu Đuối");
+}
+else {
+    alert('Nghỉ Thi');
+    console.log("Nghỉ Thi");
+}
+
+        
+        
+        }
+    </script>
+</body>
+</html>

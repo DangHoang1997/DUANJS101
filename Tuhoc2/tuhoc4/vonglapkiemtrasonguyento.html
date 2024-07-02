@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm Tra Số Nguyên Tố </title>
+</head>
+<body>
+    <label for="inputNumber">Nhập số:</label>
+    <input type="number" id="inputNumber">
+    <button id="checkNumber">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+        // Hàm kiểm tra số nguyên tố
+function isPrime(number) {
+    // Số nhỏ hơn 2 không phải là số nguyên tố
+    if (number < 2) {
+        console.log(`false: ${number} không phải là số nguyên tố`);
+        return false;
+    }
+    
+    // Số 2 là số nguyên tố duy nhất là số chẵn
+    if (number === 2) {
+        console.log(`true: ${number} là số nguyên tố`);
+        return true;
+    }
+    
+    // Kiểm tra các số lớn hơn 2 và chia hết cho 2 không phải là số nguyên tố
+    if (number % 2 === 0) {
+        console.log(`false: ${number} không phải là số nguyên tố`);
+        return false;
+    }
+    
+    // Kiểm tra các số lẻ từ 3 đến căn bậc hai của number
+    for (let i = 3; i <= Math.sqrt(number); i += 2) {
+        if (number % i === 0) {
+            console.log(`false: ${number} không phải là số nguyên tố`);
+            return false;
+        }
+    }
+    
+    console.log(`true: ${number} là số nguyên tố`);
+    return true;
+}
+
+// Lắng nghe sự kiện click vào nút kiểm tra
+document.getElementById("checkNumber").onclick = function () {
+    var number = Number(document.getElementById("inputNumber").value); // Lấy số từ input
+    var result = isPrime(number); // Gọi hàm kiểm tra số nguyên tố
+    var resultElement = document.getElementById("result"); // Lấy phần tử để hiển thị kết quả
+    
+    if (result) {
+        resultElement.textContent = `${number} là số nguyên tố.`;
+    } else {
+        resultElement.textContent = `${number} không phải là số nguyên tố.`;
+    }
+    
+    console.log({ number, result });
+};
+function sumOfPrime(n){
+    let sum =0; 
+    while(n>0){
+}
+
+
+    </script>
+    
+</body>
+</html>

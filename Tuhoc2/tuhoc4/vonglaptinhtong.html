@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Summing Up</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+
+    <body>
+    <div class="container form-gruop">
+       <h1>cho phép người dùng nhập vào một số </h1>
+       <input class="form-control w-150" type="number" id="enterNumber" placeholder=" Summing Up Enter number">
+       <button class="btn btn-primary mt-3" id="SummingUp">Enter</button>
+       <h1><span id="result"></span></h1>
+       
+    </div>
+    <script>
+        function tagID (id) {
+            return document.getElementById(id);
+        }
+        tagID("SummingUp").onclick = function () {
+            var enterNumber = parseFloat (tagID("enterNumber").value);
+            var sum =0;
+            var i = 1;
+            while(enterNumber >= i) {
+                sum = sum +i;
+                i++;
+                
+            }
+            var result = "<h1>" + sum + "</h1>";
+            tagID("result").innerHTML = (`Kết quả sua khi lặp là : ${result}`);
+            console.log("i",i);
+        }
+    </script>
+
+
+
+
+
+
+    </body>
+</html>
