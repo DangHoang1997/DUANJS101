@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Countdown Timer</h1>
+      <form id="countdownForm">
+        <label for="eventDropdown">Choose an event:</label>
+        <select id="eventDropdown">
+          <option value="new-year">New Year</option>
+          <option value="christmas">Christmas</option>
+          <option value="halloween">Halloween</option>
+          <option value="valentine">Valentine's Day</option>
+        </select>
+      </form>
+      <div id="countdown">
+        <div id="timer">
+          <div>
+            <span id="days">0</span>
+            <div>Days</div>
+          </div>
+          <div>
+            <span id="hours">0</span>
+            <div>Hours</div>
+          </div>
+          <div>
+            <span id="minutes">0</span>
+            <div>Minutes</div>
+          </div>
+          <div>
+            <span id="seconds">0</span>
+            <div>Seconds</div>
+          </div>
+        </div>
+        <div id="eventStatus"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      function tagID(id) {
+        return document.getElementById(id);
+      }
+      const eventDates = {
+        "new-year": new Date("2025-01-01T00:00:00Z"),
+        christmas: new Date("2025-12-25T00:00:00Z"),
+        halloween: new Date("2025-10-31T00:00:00Z"),
+        valentine: new Date("2025-02-14T00:00:00Z"),
+      };
+
+      const countdownForm = tagID("countdownForm");
+      const eventDropdown = tagID("eventDropdown");
+      const daysElement = tagID("days"); // Sửa lỗi từ daysElment thành daysElement
+      const hoursElement = tagID("hours");
+      const minutesElement = tagID("minutes");
+      const secondsElement = tagID("seconds");
+      const eventStatus = tagID("eventStatus");
+
+      let countdownInterval;
+      function updateCountdown() {
+        const currentDate = new Date();
+        const selectedEvent = eventDropdown.value;
+        const eventDate = eventDates[selectedEvent];
+        const timeDifference = eventDate - currentDate;
+
+        if (timeDifference < 0) {
+          clearInterval(countdownInterval);
+          daysElement.textContent = "0";
+          hoursElement.textContent = "0";
+          minutesElement.textContent = "0";
+          secondsElement.textContent = "0";
+          eventStatus.textContent = "Event expired"; // Sửa lỗi từ eventStatusElement thành eventStatus
+          return;
+        }
+        const totalSeconds = Math.floor(timeDifference / 1000);
+        const days = Math.floor(totalSeconds / (3600 * 24));
+        const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = Math.floor(totalSeconds % 60);
+
+        daysElement.textContent = days;
+        hoursElement.textContent = hours;
+        minutesElement.textContent = minutes;
+        secondsElement.textContent = seconds;
+      }
+      // Event listener for dropdown change
+      eventDropdown.addEventListener("change", function () {
+        clearInterval(countdownInterval);
+        const selectedEvent = eventDropdown.value;
+
+        // Set background image based on selected event
+        document.body.style.backgroundImage = `url('${selectedEvent}.jpg')`;
+
+        // Update countdown immediately and start interval
+        updateCountdown();
+        countdownInterval = setInterval(updateCountdown, 1000);
+      });
+
+      // Initial setup: set background and start countdown for default event
+      document.body.style.backgroundImage = `url('${eventDropdown.value}.jpg')`;
+      countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+  </body>
+</html>

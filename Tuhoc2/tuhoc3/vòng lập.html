@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3>vi du : cho phoe nguoi dung nhap vao mot so in ra so the</h3>
+      <p>nhap vao 1 so</p>
+      <input id="nhap" type="number" />
+      <button id="inTheDiv">in the div</button>
+    </div>
+    <div id="ketQua1">
+      <div class="">Hello CyberSoft</div>
+    </div>
+
+    <script>
+      // xac dinh yeu to thay doi khoi tao bien buoc nhay
+      // thiet lap dieu kien lap
+      // xet up khoi xu ly va cai dat
+      // thay doi gia tri cua buoc nhay
+
+      //   function tagID(id) {
+      //     return document.getElementById(id);
+      //   }
+      //   tagID("inTheDiv").onclick = function () {
+      //     // input number
+      //     var input = tagID("nhap").value * 1;
+
+      //     // output : string
+      //     var output = "";
+      //     // process
+      //     var count = 1;
+      //     // xuy nghi dieu kien can lam
+      //     while (count <= input) {
+      //       var div = ' <div class="">Hello CyberSoft</div>';
+      //       output += div;
+      //       // tang buoc
+      //       count++;
+      //     }
+      //     // in ket qua
+      //     tagID("ketQua1").innerHTML = output;
+      //   };
+    </script>
+    <script>
+      function tagID(id) {
+        return document.getElementById(id);
+      }
+      tagID("inTheDiv").onclick = function () {
+        //input
+        var input = tagID("nhap").value * 1;
+        //output
+        var output = "";
+        var count = 1;
+        //process
+        while (count <= input) {
+          var div = "<h1>Hello CyberSoft</h1>";
+          output = output + div;
+          count = count + 1;
+        }
+        tagID("ketQua1").innerHTML = output;
+      };
+    </script>
+  </body>
+</html>
