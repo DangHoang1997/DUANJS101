@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funcition</title>
+  </head>
+  <body>
+    <script>
+      // định nghĩa hàm sayHello các nội dụng này sẽ không được chạy ngay lập tức khi load trang web
+      function sayHello() {
+        console.log("hi");
+        console.log("have a goog day ");
+      }
+      //  khi muốn chạy hàm , thực thi hàm thì ta chỉ cần
+      sayHello();
+
+      // hàm không có tham số
+      sayHello();
+      // hàm có tham số / parameter là hàm có tham số
+      function sayHelloWithName(username) {
+        console.log("username = " + username);
+      }
+      sayHelloWithName("Nguyen Van A");
+      function sayHelloWithNameAndAge(username, age) {
+        console.log("username = " + username);
+        console.log("age = " + age);
+      }
+      sayHelloWithNameAndAge("Nguyen Van B", 18);
+      // hàm có tham số tính TB
+      function tinhTB(toán, văn) {
+        var dtb = (toán + văn) / 2;
+        console.log(` Điểm trung bình của bạn là ${dtb}`);
+        return dtb;
+      }
+      tinhTB(8, 9);
+      tinhTB(9, 10);
+      //  hàm thông báo kết quả
+      function thongbaoketqua(username, toán, văn) {
+        console.log(`${username}`), tinhTB(toán, văn);
+      }
+      thongbaoketqua("Nguyen Van C", 8, 9);
+    //   dựa vào điểm trung bình để xếp loại học sinh 
+    // hàm có giá trị trả về là return nếu không có return thì mặc định trả về undifined
+
+
+
+    //viết hàm xếp loại học hinh đỗ và trượt , tái sử dụng hàm tính điểm trung bình 
+    
+   function xeploai(toán,văn){
+    var tb = tinhTB(toán,văn);
+    if(tb >= 6){
+        return "đậu";
+    }
+        return "rớt";
+    
+   }
+   var ketqua = xeploai(7,9);
+   console.log(ketqua);
+    
+
+    </script>
+  </body>
+</html>
