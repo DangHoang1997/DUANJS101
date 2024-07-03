@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <style>
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background-color: #333;
+      color: #fff;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar.show {
+      transform: translateX(0);
+    }
+
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      border-bottom: 1px solid #555;
+    }
+
+    .sidebar-header h3 {
+      margin: 0;
+    }
+
+    .sidebar-header button {
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .sidebar-nav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar-nav li {
+      padding: 1rem;
+    }
+
+    .sidebar-nav li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .sidebar-social {
+      list-style-type: none;
+      margin: 0;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      border-top: 1px solid #555;
+    }
+
+    .sidebar-social li {
+      margin: 0 0.5rem;
+    }
+
+    .sidebar-social li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" id="toggle-btn">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h3>Sidebar</h3>
+      <button id="close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="#">Menu 1</a></li>
+      <li><a href="#">Menu 2</a></li>
+      <li><a href="#">Menu 3</a></li>
+      <li><a href="#">Menu 4</a></li>
+      <li><a href="#">Menu 5</a></li>
+      <li><a href="#">Menu 6</a></li>
+    </ul>
+    <ul class="sidebar-social">
+      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="#"><i class="fab fa-github"></i></a></li>
+    </ul>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const sidebar = document.getElementById('sidebar');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.add('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('show');
+    });
+  </script>
+</body>
+</html>
