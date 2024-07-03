@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viết chương trình in ra số ngôi sao tương ứng khi người dùng nhập input</title>
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+    
+</head>
+<body>
+
+    <input id="nhapso" type="text">
+    <button id="printStar">btn</button>
+    <span id="result"></span>
+    <script>
+        document.getElementById('printStar').onclick = function(){
+            // input =0;
+            var input =  Number(document.getElementById('nhapso').value);
+            // output string 
+            var output = '';
+            // xác đinh yếu tố thay dổi
+            var soSao =0;
+
+            while(input > soSao){
+                output += '<i class="fa fa-star"></i>';
+                // giá trị buoi thay đổi
+                soSao++;
+            }
+            document.getElementById('result').innerHTML = output;
+        }
+        // xác địn yếu tố thay đổi 
+        // thiêt lập điều kiện trong vòng lặp while
+        // cài đặt khối xử lý 
+        // thay đổi giá trị của bước nhảy 
+    </script>
+    
+</body>
+</html>
