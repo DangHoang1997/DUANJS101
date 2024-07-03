@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bộ đếm thời gian</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      .timer-container {
+        text-align: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      #timer {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+      button {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin: 0 5px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="timer-container">
+      <div id="timer">00:00:00</div>
+      <button id="startBtn">Bắt đầu</button>
+      <button id="stopBtn">Dừng</button>
+      <button id="resetBtn">Đặt lại</button>
+    </div>
+
+    <script>
+      let timer;
+      let seconds = 0;
+      let minutes = 0;
+      let hours = 0;
+      const timerElement = document.getElementById("timer");
+      const startBtn = document.getElementById("startBtn");
+      const stopBtn = document.getElementById("stopBtn");
+      const resetBtn = document.getElementById("resetBtn");
+
+      function updateTimer() {
+        seconds++;
+        if (seconds >= 60) {
+          seconds = 0;
+          minutes++;
+          if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+          }
+        }
+        timerElement.textContent = `${hours
+          .toString()
+          .padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds
+          .toString()
+          .padStart(2, "0")}`;
+      }
+
+      function startTimer() {
+        if (!timer) {
+          timer = setInterval(updateTimer, 1000);
+        }
+      }
+
+      function stopTimer() {
+        clearInterval(timer);
+        timer = null;
+      }
+
+      function resetTimer() {
+        stopTimer();
+        seconds = 0;
+        minutes = 0;
+        hours = 0;
+        timerElement.textContent = "00:00:00";
+      }
+
+      startBtn.addEventListener("click", startTimer);
+      stopBtn.addEventListener("click", stopTimer);
+      resetBtn.addEventListener("click", resetTimer);
+    </script>
+  </body>
+</html>
