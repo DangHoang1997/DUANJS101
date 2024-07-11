@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tìm phần tử xuất hiện nhiều nhất và in ra</title>
+  </head>
+  <body>
+    <script>
+      let arrNumber = [1, 2, 3, 4, 3, 3, 4, 4, 5, 6, 7, 8, 9, 10];
+      let soLanXuathien = {};
+      for (var i = 0; i < arrNumber.length; i++) {
+        let num = arrNumber[i];
+        if (soLanXuathien[num]) {
+          soLanXuathien[num]++;
+        } else {
+          soLanXuathien[num] = 1;
+        }
+      }
+      let tanXuatXuatHienLonNhat = 0;
+      let phanTuCoTanXuatXuatHienLonNhat = [];
+      for (let key in soLanXuathien) {
+        if (soLanXuathien[key] > tanXuatXuatHienLonNhat) {
+          tanXuatXuatHienLonNhat = soLanXuathien[key];
+          phanTuCoTanXuatXuatHienLonNhat = [parseInt(key)];
+        } else if (soLanXuathien[key] === tanXuatXuatHienLonNhat) {
+          phanTuCoTanXuatXuatHienLonNhat.push(parseInt(key));
+        }
+      }
+      console.log(`tanXuatXuatHienLonNhat, ${tanXuatXuatHienLonNhat}`);
+      console.log(
+        `phần tử có tần xuất xuất hiện lớn nhất , ${phanTuCoTanXuatXuatHienLonNhat}`
+      );
+    </script>
+  </body>
+</html>

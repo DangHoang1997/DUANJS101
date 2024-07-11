@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // đề bài tìm giá trị lớn nhất trong mảng
+        function TSLN(arrNumber){
+            
+            let maxNumber = arrNumber[0];
+            for(let i = 1 ; i < arrNumber.length ; i++){
+                if(arrNumber[i] > maxNumber){
+                    maxNumber = arrNumber[i];
+                    console.log(maxNumber);
+                }
+
+            }
+            return maxNumber;
+        }
+        var arrFindMax = TSLN([1,2,3,4,5,6,7]);
+        console.log(`số lớn nhất là ${arrFindMax}` );
+        
+    </script>
+    
+</body>
+</html>

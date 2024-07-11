@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // input nhập số 
+        var arrNumber = [1,1,2,2,3,4,5,5,6,6,8];
+    function twoTimeElement (arrNumber){
+    
+        var remote = new Set(arrNumber);
+        var remoteArr = Array.from(remote);
+        console.log(remoteArr);
+        return remoteArr;
+    }
+    var result = twoTimeElement(arrNumber);
+    
+    // In kết quả ra console
+    console.log("Kết quả:", result);
+    
+    // Nếu bạn muốn hiển thị kết quả trên trang web
+    document.write("Kết quả: " + result);
+    
+    </script>
+</body>
+</html>

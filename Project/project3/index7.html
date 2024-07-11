@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+
+    <body>
+        <script>
+            // bước 1 tạo mảng 
+          let arrNumber = [1,2,3,3,3,4,5,6,7,7,7];
+          // tạo đối tượng thu tần xuất xuất hiện của phần tử 
+          let SoLanXuatHien = {}
+          // cho phần tử = giá trị của các phần tử trong mảng 
+          // nếu các phần tử có trong mảng thì sẽ cộng thêm 1 đơn vị , nếu chưa thì sẽ cho xuất hiện và định nghĩa là 1
+          for(let i = 0; i < arrNumber.length ; i++){
+            let phanTu = arrNumber[i];
+            if(SoLanXuatHien[phanTu]){
+                SoLanXuatHien[phanTu]++
+            } else{
+                SoLanXuatHien[phanTu] = 1;
+            }
+          }
+          // viết ra 1 biến để chứa tần xuất xuất hiện lớn nhất 
+          let tanXuatXuatHienLonNhat = 0;
+          // viết ra 1 biến lưu trữ phần tử có số lần xuất hiện lớn nhất
+          let phanTuCoTanXuatXuatHienLonNhat =0;
+          // viết vòng lập for để tìm tần suất lớn nhất , và phần tử có số lần xuất hiện lớn nhất 
+          for (let key in SoLanXuatHien){
+            if (SoLanXuatHien[key]> tanXuatXuatHienLonNhat){
+                tanXuatXuatHienLonNhat = SoLanXuatHien[key];
+                phanTuCoTanXuatXuatHienLonNhat = [parseInt(key)];
+
+
+            }else if (SoLanXuatHien[key]===tanXuatXuatHienLonNhat){
+                phanTuCoTanXuatXuatHienLonNhat.push(parseInt(key));
+            }
+          }
+          console.log(`tanXuatXuatHienLonNhat, ${tanXuatXuatHienLonNhat}`);
+          console.log(`phần tử có tần xuất xuất hiện lớn nhất , ${phanTuCoTanXuatXuatHienLonNhat}`);
+
+        </script>
+    </body>
+</html>
